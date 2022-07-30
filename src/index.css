@@ -1,0 +1,60 @@
+.spinner {
+  font-size: 10px;
+  border-radius: 50%;
+  background: var(--spinner-color);
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, var(--spinner-color)), color-stop(42%, var(--spinner-faint-color)));
+  background: linear-gradient(to right, var(--spinner-color) 10%, var(--spinner-faint-color) 42%);
+  position: relative;
+  -webkit-animation: spinner 1.4s infinite linear;
+  animation: spinner 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.spinner::before {
+  width: 50%;
+  height: 50%;
+  background: var(--spinner-color);
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.spinner::after {
+  background: var(--spinner-bg-color);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=index.css.map */

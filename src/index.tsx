@@ -1,34 +1,20 @@
 import React, { CSSProperties, FC, ReactNode } from "react";
-// import Spinner from "../loaders/spinner";
+import "./index.css";
 
 export type ButtonProps = {
-  /**
-   * The content of the button.
-   */
   label?: ReactNode | string;
-  /**
-   * Link fro next or react-router-dom
-   */
   Link?: any;
-  /**
-   * icon for button
-   */
   icon?: ReactNode;
-  /**
-   * default className
-   */
   className?: string;
-  /**
-   * loading state
-   */
   loading?: boolean;
   onClick?: () => any;
   disabled?: boolean;
   style?: CSSProperties;
   href?: string;
   to?: string;
-  // spinnerBgColor?: string;
-  // spinnerColor?: string;
+  spinnerBgColor?: string;
+  spinnerColor?: string;
+  spinnerSize?: number;
   type?: "button" | "submit" | "reset" | undefined;
   ripple?: boolean;
 };
@@ -39,12 +25,13 @@ const Button: FC<ButtonProps> = ({
   icon,
   Link,
   className,
-  // loading,
+  loading,
   onClick,
   disabled,
   type,
-  // spinnerBgColor,
-  // spinnerColor,
+  spinnerBgColor,
+  spinnerColor,
+  spinnerSize,
   href,
   to,
   ripple = true,
@@ -69,7 +56,13 @@ const Button: FC<ButtonProps> = ({
             }}
           >
             {label}
-            {/* {loading && <Spinner color={spinnerColor} bgColor={spinnerBgColor} />} */}
+            {loading && (
+              <Spinner
+                color={spinnerColor}
+                bgColor={spinnerBgColor}
+                size={spinnerSize}
+              />
+            )}
           </a>
         </Link>
       )}
@@ -92,7 +85,13 @@ const Button: FC<ButtonProps> = ({
         >
           <a>
             {label}
-            {/* {loading && <Spinner color={spinnerColor} bgColor={spinnerBgColor} />} */}
+            {loading && (
+              <Spinner
+                color={spinnerColor}
+                bgColor={spinnerBgColor}
+                size={spinnerSize}
+              />
+            )}
           </a>
         </Link>
       )}
@@ -117,14 +116,42 @@ const Button: FC<ButtonProps> = ({
         >
           {icon}
           {label}
-          {/* {loading && <Spinner color={spinnerColor} bgColor={spinnerBgColor} />} */}
+          {loading && (
+            <Spinner
+              color={spinnerColor}
+              bgColor={spinnerBgColor}
+              size={spinnerSize}
+            />
+          )}
         </button>
       )}
     </>
   );
 };
 
-export default Button;
+interface SpinnerProps {
+  color?: string;
+  bgColor?: string;
+  size?: number;
+}
+
+const Spinner: FC<SpinnerProps> = ({ color, bgColor, size }) => {
+  const style = {
+    "--spinner-color": color ?? "#ffffff",
+    "--spinner-faint-color": color ? color + "00" : "#ffffff00",
+    "--spinner-bg-color": bgColor ?? "black",
+  } as CSSProperties;
+  return (
+    <span
+      className={`spinner`}
+      style={{
+        height: size ?? 15,
+        width: size ?? 15,
+        ...style,
+      }}
+    />
+  );
+};
 
 const rippleEffect = (e: { currentTarget: any; clientX: number }) => {
   const button = e.currentTarget;
@@ -146,3 +173,5 @@ const rippleEffect = (e: { currentTarget: any; clientX: number }) => {
 
   button.appendChild(circle);
 };
+
+export default Button;
