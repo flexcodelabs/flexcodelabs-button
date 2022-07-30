@@ -2,25 +2,10 @@ import React, { CSSProperties, FC, ReactNode } from "react";
 import "./index.css";
 
 export type ButtonProps = {
-  /**
-   * The content of the button.
-   */
   label?: ReactNode | string;
-  /**
-   * Link fro next or react-router-dom
-   */
   Link?: any;
-  /**
-   * icon for button
-   */
   icon?: ReactNode;
-  /**
-   * default className
-   */
   className?: string;
-  /**
-   * loading state
-   */
   loading?: boolean;
   onClick?: () => any;
   disabled?: boolean;
