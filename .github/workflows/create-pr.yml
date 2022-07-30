@@ -1,8 +1,10 @@
-name: Dev Release PR
+name: create PR to master
 
 on:
   push:
-    branches: [develop]
+    branches: 
+       - '**'        # matches every branch
+       - '!master'   # excludes master
 
 jobs:
   build:
@@ -17,5 +19,5 @@ jobs:
         uses: BaharaJr/create-pr@0.0.1
         with:
           GITHUB_TOKEN: ${{secrets.TOKEN}}
-          DESTINATION_BRANCH: release-dev
-          KEYWORD: release(dev)
+          DESTINATION_BRANCH: master
+          KEYWORD: release

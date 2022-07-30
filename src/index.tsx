@@ -58,6 +58,7 @@ const Button: FC<ButtonProps> = ({
               cursor: disabled ? "default" : "pointer",
               opacity: disabled ? 0.4 : 1,
               position: "relative",
+              display: "inline-flex",
               ...style,
             }}
             className={`${className}`}
@@ -85,6 +86,7 @@ const Button: FC<ButtonProps> = ({
             cursor: disabled ? "default" : "pointer",
             opacity: disabled ? 0.4 : 1,
             position: "relative",
+            display: "inline-flex",
             ...style,
           }}
         >
@@ -109,6 +111,7 @@ const Button: FC<ButtonProps> = ({
             cursor: disabled ? "default" : "pointer",
             opacity: disabled ? 0.4 : 1,
             position: "relative",
+            display: "inline-flex",
             ...style,
           }}
         >
