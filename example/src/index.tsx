@@ -4,7 +4,13 @@ import Button from "@flexcodelabs/button";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Button label="Button" icon={<div>Icon</div>} />
+    <Button
+      label="Button"
+      style={{
+        padding: 10,
+        background: "black",
+      }}
+    />
   </React.StrictMode>,
   document.getElementById("root")
 );
