@@ -1,8 +1,8 @@
-# @flexlabs/${package-name}
+# @flexcodelabs/$button
 
-[![npm](https://img.shields.io/npm/v/@flexlabs/${package-name})](https://www.npmjs.com/package/@flexlabs/${package-name}) [![NPM](https://img.shields.io/npm/l/@flexlabs/${package-name})](https://www.npmjs.com/package/@flexlabs/${package-name})
+[![npm](https://img.shields.io/npm/v/@flexcodelabs/$button)](https://www.npmjs.com/package/@flexcodelabs/$button) [![NPM](https://img.shields.io/npm/l/@flexcodelabs/$button)](https://www.npmjs.com/package/@flexcodelabs/$button)
 
-- [Packe Component](#@flexlabs/${package-name})
+- [Packe Component](#@flexcodelabs/$button)
   - [Features](#features)
   - [Installation](#Installation)
   - [Usage](#usage)
@@ -11,21 +11,24 @@
 
 ## Features
 
-- List of features
+- Loader
+- Disabled
+- Icon or Text or Both
+- can be used as link
 
 ## Installation
 
-`npm install @flexlabs/${package-name}`
+`npm install @flexcodelabs/$button`
 
 or
 
-`yarn add @flexlabs/${package-name}`
+`yarn add @flexcodelabs/$button`
 
 ## Usage
 
 ```js
 ...
-import PackageName from '@flexlabs/package-name';
+import PackageName from '@flexcodelabs/button';
 
 <PackageName
   {...props}
@@ -34,11 +37,18 @@ import PackageName from '@flexlabs/package-name';
 
 ## Examples
 
-[Source code](${repo})  
-[Demo](${demo_link})
+[Source code](https://github.com/flexcodelabs/flexcodelabs-button)
 
 ## Props
 
-| Name | Type   | Default | Description  |
-| ---- | ------ | ------- | ------------ |
-| Prop | `type` | ``      | Descriptions |
+| Name      | Type                                     | Default | Required | Description                                  |
+| --------- | ---------------------------------------- | ------- | -------- | -------------------------------------------- |
+| label     | `ReactNode or string`                    | ``      | false    | Button content                               |
+| style     | `CSSProperties`                          | ``      | false    | Custome styles                               |
+| className | `string`                                 | ``      | false    | Custom classname                             |
+| ripple    | `boolean`                                | ``      | false    | Whether to add ripple effect on button click |
+| disabled  | `boolean`                                | ``      | false    | Button disabled status                       |
+| type      | `button or submit or reset or undefined` | ``      | false    |                                              |
+| href      | `string`                                 | ``      | false    | destination for next projects                |
+| to        | `string`                                 | ``      | false    | destination for react router dom             |
+| Link      | `any`                                    | ``      | false    | can be Link from react router or next/link   |

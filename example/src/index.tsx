@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PackageName from "@flexlabs/package-name";
+import Button from "@flexcodelabs/button";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PackageName>
-      <div>Hello World</div>
-    </PackageName>
+    <Button label="Button" icon={<div>Icon</div>} />
   </React.StrictMode>,
   document.getElementById("root")
 );
