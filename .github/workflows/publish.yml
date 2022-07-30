@@ -16,12 +16,12 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Install dependencies and build 🔧
-        run: npm install && npm run build
-      - name: Publish package on NPM 📦
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      # - name: Install dependencies and build 🔧
+      #   run: npm install && npm run build
+      # - name: Publish package on NPM 📦
+      #   run: npm publish --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       # update version
       - name: install jq
         run: yarn add jq
@@ -33,10 +33,18 @@ jobs:
         id: version
       - name: bump-version
         id: bump_version
-        uses: ./
+        uses: ClickPesa/bump-version@1.0.4
         with: 
           GITHUB_TOKEN: ${{secrets.TOKEN}}
           PACKAGE_VERSION: ${{ steps.version.outputs.PACKAGE_VERSION }}
           DELETE_BRANCH: false
           CHANGELOG_PATH: ./CHANGELOG.md
           PACKAGE_JSON_PATH: ./package.json
+
+      - name: update master branch
+        run: |
+          git add package.json
+          git add CHANGELOG.md
+          git add dist
+          git commit -m "Skip CI"
+          git push
