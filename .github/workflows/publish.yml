@@ -43,8 +43,7 @@ jobs:
 
       - name: update master branch
         run: |
-          git add package.json
-          git add CHANGELOG.md
-          git add dist
+          git add ./package.json
+          git add ./CHANGELOG.md
           git commit -m "Skip CI"
           git push
