@@ -30,11 +30,7 @@ jobs:
         run: |
           PACKAGE_VERSION=$(cat ./package.json | jq '.version' | tr -d '"') 
           echo "::set-output name=PACKAGE_VERSION::$(cat ./package.json | jq '.version' | tr -d '"')"
-          echo $PACKAGE_VERSION
         id: version
-      - name: Build
-        run: |
-          yarn run all
       - name: bump-version
         id: bump_version
         uses: ./
