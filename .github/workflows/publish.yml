@@ -33,7 +33,7 @@ jobs:
         id: version
       - name: bump-version
         id: bump_version
-        uses: ClickPesa/bump-version@1.0.4
+        uses: flexcodelabs/bump-version@0.0.2
         with: 
           GITHUB_TOKEN: ${{secrets.TOKEN}}
           PACKAGE_VERSION: ${{ steps.version.outputs.PACKAGE_VERSION }}
