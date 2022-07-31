@@ -1,3 +1,5 @@
+# 0.1.5
+* add copying files to lib folder for new release
 # 0.1.4
 * add loading status to the button
 

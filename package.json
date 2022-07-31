@@ -1,6 +1,6 @@
 {
   "name": "@flexcodelabs/button",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "",
   "main": "./lib/cjs/index.js",
