@@ -46,6 +46,7 @@ const Button: FC<ButtonProps> = ({
               opacity: disabled ? 0.4 : 1,
               position: "relative",
               display: "inline-flex",
+              overflow: "hidden",
               ...style,
             }}
             className={`${className}`}
@@ -80,6 +81,7 @@ const Button: FC<ButtonProps> = ({
             opacity: disabled ? 0.4 : 1,
             position: "relative",
             display: "inline-flex",
+            overflow: "hidden",
             ...style,
           }}
         >
@@ -111,6 +113,7 @@ const Button: FC<ButtonProps> = ({
             opacity: disabled ? 0.4 : 1,
             position: "relative",
             display: "inline-flex",
+            overflow: "hidden",
             ...style,
           }}
         >
