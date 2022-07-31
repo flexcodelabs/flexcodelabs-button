@@ -27,12 +27,15 @@ or
 ## Usage
 
 ```js
-...
-import PackageName from '@flexcodelabs/button';
+import Button from "@flexcodelabs/button";
 
-<PackageName
-  {...props}
-/>
+<Button
+  label="Button"
+  style={{
+    padding: 10,
+    background: "black",
+  }}
+/>;
 ```
 
 ## Examples

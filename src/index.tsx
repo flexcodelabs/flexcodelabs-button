@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, ReactNode } from "react";
-import "./index.css";
+import "./button.css";
 
 export type ButtonProps = {
   label?: ReactNode | string;
